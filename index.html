@@ -32,7 +32,7 @@
         <nav id="navbar-scroll" class="bg-[#F9F7F3] backdrop-blur-md">
             <div class="navbar  flex justify-between p-6 h-24 ">
                 <div class="navbar-start">
-                    <button class="btn bg-[#B4F461] text-xl"> Blog</button>
+                    <button id="blog-btn" class="btn bg-[#B4F461] text-xl"> Blog</button>
                 </div>
                 <div class="navbar-center ">
                     <div class="flex justify-center items-center">
@@ -44,22 +44,28 @@
                     <div>
                         <img src="./assets/coin.png" alt="">
                     </div>
-                    <div>
-                        5500 BDT
+                    <div  class="flex justify-center items-end gap-1 ml-1">
+                        <div id="account-balance" class="font-bold">
+                            5500
+                        </div>
+                        <div class="font-bold">
+                            BDT
+                        </div>
                     </div>
+                    
                 </div>
             </div>
         </nav>
         <!-- donation button section  -->
         <div class="text-center py-4  ">
-            <button id="donation-btn" class="btn bg-[#B4F461] text-xl mr-2"> Donation</button>
-            <button id="history-btn" class="btn bg-[#B4F461] text-xl"> History</button>
+            <button id="show-donation-btn" class="btn bg-[#B4F461] text-xl mr-2"> Donation</button>
+            <button id="show-history-btn" class="btn bg-[#B4F461] text-xl"> History</button>
             <!-- <div class="divider"></div> -->
         </div>
        
     </header>
     <!-- main section  -->
-    <main class="z-20 ">
+    <main id="Donation-section" class="z-20 ">
         <!-- donate for noakhali section  -->
 
         <section class="card p-5  mx-auto max-w-[1020px] bg-[#e7e4e41a] border border-[#7b7b7b1a] mt-8">
@@ -75,7 +81,7 @@
                         <div>
                             <img class="w-full" src="./assets/coin.png" alt="">
                         </div>
-                        <div class="text-xl font-bold">89,400</div>
+                        <div id="noakhali-donate-amount-balance" class="text-xl font-bold">89400</div>
                         <div class="text-xl font-bold">BDT</div>
                     </div>
 
@@ -89,11 +95,11 @@
                     </div>
 
                     <div class="mb-3">
-                        <input type="text" placeholder="Write Donation Amount"
+                        <input id="noakhali-donate-input" type="text" placeholder="Write Donation Amount"
                             class="input input-bordered w-full max-w-lg" />
                     </div>
                     <div class="card-actions justify-center">
-                        <button class="btn bg-[#B4F461] px-48 " onclick="my_modal_5.showModal()">Donate Now</button>
+                        <button id="noakhali-donate-btn" class="btn bg-[#B4F461] px-48 ">Donate Now</button>
                         <dialog id="my_modal_1" class="modal modal-bottom sm:modal-middle">
                             <div class="modal-box text-center flex-col gap-5 inline">
                                 <h1 class="text-3xl font-bold py-2">Congrats!</h1>
@@ -129,7 +135,7 @@
                         <div>
                             <img class="w-full" src="./assets/coin.png" alt="">
                         </div>
-                        <div class="text-xl font-bold">89,414</div>
+                        <div id="feni-donate-amount-balance" class="text-xl font-bold">89414</div>
                         <div class="text-xl font-bold">BDT</div>
                     </div>
 
@@ -144,11 +150,11 @@
                     </div>
 
                     <div class="mb-3">
-                        <input type="text" placeholder="Write Donation Amount"
+                        <input id="feni-donate-input" type="text" placeholder="Write Donation Amount"
                             class="input input-bordered w-full max-w-lg" />
                     </div>
                     <div class="card-actions justify-center">
-                        <button class="btn bg-[#B4F461] px-48 " onclick="my_modal_5.showModal()">Donate Now</button>
+                        <button id="feni-donate-btn" class="btn bg-[#B4F461] px-48 ">Donate Now</button>
                         <dialog id="my_modal_2" class="modal modal-bottom sm:modal-middle">
                             <div class="modal-box text-center flex-col gap-5 inline">
                                 <h1 class="text-3xl font-bold py-2">Congrats!</h1>
@@ -184,7 +190,7 @@
                         <div>
                             <img class="w-full" src="./assets/coin.png" alt="">
                         </div>
-                        <div class="text-xl font-bold">89,414</div>
+                        <div id="qouta-donate-balance" class="text-xl font-bold">89414</div>
                         <div class="text-xl font-bold">BDT</div>
                     </div>
 
@@ -199,12 +205,12 @@
                     </div>
 
                     <div class="mb-3">
-                        <input type="text" placeholder="Write Donation Amount"
+                        <input id="quota-donate-input" type="text" placeholder="Write Donation Amount"
                             class="input input-bordered w-full max-w-lg" />
                     </div>
                     <div class="card-actions justify-center">
-                        <button class="btn bg-[#B4F461] px-48 " onclick="my_modal_5.showModal()">Donate Now</button>
-                        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                        <button id="qouta-donate-btn" class="btn bg-[#B4F461] px-48 " >Donate Now</button>
+                        <dialog id="my_modal_3" class="modal modal-bottom sm:modal-middle">
                             <div class="modal-box text-center flex-col gap-5 inline">
                                 <h1 class="text-3xl font-bold py-2">Congrats!</h1>
                                 <div class="flex justify-center items-center py-2">
@@ -225,12 +231,22 @@
                 </div>
             </div>
         </section>
+
     </main>
+
+    <!-- trasation section starts here  -->
+    <section id="History-section" class="hidden">
+        <div>
+            <h3>this is trasation</h3>
+        </div>
+    </section>
     <!-- footer section  -->
     <footer class="bg-slate-300 mt-8">
 
     </footer>
+    <script src="./js/utilities.js"></script>
     <script src="./js/home.js"></script>
+    <script src="./js/feather.js"></script>
 </body>
 
 </html>
