@@ -2,7 +2,11 @@
 module.exports = {
     content: ["./src/**/*.{html,js}"],
     theme: {
-      extend: {},
+      extend: {
+        blur:{
+          md: 'blur(10px)',
+        },
+      },
     },
     plugins: [],
   }

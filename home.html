@@ -19,14 +19,18 @@
         .font-lexend {
             font-family: "Lexend", sans-serif;
         }
+        .blur-background {
+            backdrop-filter: blur(10px);
+        }
+
     </style>
 </head>
 
 <body class="font-lexend">
     <!-- header section -->
-    <header>
-        <nav class="h-24">
-            <div class="navbar bg-[#F9F7F3] flex justify-between p-6 h-24">
+    <header class=" sticky top-0 z-10 backdrop-blur-md">
+        <nav id="navbar-scroll" class="bg-[#F9F7F3] backdrop-blur-md">
+            <div class="navbar  flex justify-between p-6 h-24 ">
                 <div class="navbar-start">
                     <button class="btn bg-[#B4F461] text-xl"> Blog</button>
                 </div>
@@ -47,25 +51,27 @@
             </div>
         </nav>
         <!-- donation button section  -->
-        <div class="text-center mt-16">
-            <button class="btn bg-[#B4F461] text-xl mr-2"> Donation</button>
-            <button class="btn bg-[#B4F461] text-xl"> History</button>
+        <div class="text-center py-4  ">
+            <button id="donation-btn" class="btn bg-[#B4F461] text-xl mr-2"> Donation</button>
+            <button id="history-btn" class="btn bg-[#B4F461] text-xl"> History</button>
+            <!-- <div class="divider"></div> -->
         </div>
+       
     </header>
     <!-- main section  -->
-    <main>
+    <main class="z-20 ">
         <!-- donate for noakhali section  -->
 
-        <section class="card p-5  mx-auto max-w-[1020px] bg-[#e7e4e41a] border border-[#7b7b7b1a]">
+        <section class="card p-5  mx-auto max-w-[1020px] bg-[#e7e4e41a] border border-[#7b7b7b1a] mt-8">
             <div class="flex gap-5">
                 <!-- card image  -->
                 <div class="w-1/2">
-                    <img  src="./assets/noakhali.png" alt="">
+                    <img src="./assets/noakhali.png" alt="">
                 </div>
                 <!-- card info section  -->
                 <div class="w-1/2 flex-col gap-3">
 
-                    <div class="flex bg-[#1111110D] items-center max-w-44 gap-1 rounded-md p-3">
+                    <div class="flex bg-[#1111110D] items-center max-w-44 gap-1 rounded-md p-3 mb-3">
                         <div>
                             <img class="w-full" src="./assets/coin.png" alt="">
                         </div>
@@ -73,27 +79,158 @@
                         <div class="text-xl font-bold">BDT</div>
                     </div>
 
-                    <h2 class="card-title">Donate for Flood at Noakhali, Bangladesh</h2>
-                    <p> The recent floods in Noakhali have caused significant damage to homes infrastructure. Your
-                        donation will help provide essential supplies and to those affected by this disaster. Every
-                        contribution, big or small, makes difference. Please join us in supporting the relief efforts
-                        and making a positive impact on the lives of those in need.</p>
-                    
-                    <div>
-                        <input type="text" placeholder="Write Donation Amount" class="input input-bordered w-full max-w-lg" />
+                    <div class="mb-3">
+                        <h2 class="card-title mb-2">Donate for Flood at Noakhali, Bangladesh</h2>
+                        <p> The recent floods in Noakhali have caused significant damage to homes infrastructure. Your
+                            donation will help provide essential supplies and to those affected by this disaster. Every
+                            contribution, big or small, makes difference. Please join us in supporting the relief
+                            efforts
+                            and making a positive impact on the lives of those in need.</p>
                     </div>
-                    <div class="card-actions justify-end">
-                        <button class="btn btn-primary">Listen</button>
+
+                    <div class="mb-3">
+                        <input type="text" placeholder="Write Donation Amount"
+                            class="input input-bordered w-full max-w-lg" />
                     </div>
-                    
+                    <div class="card-actions justify-center">
+                        <button class="btn bg-[#B4F461] px-48 " onclick="my_modal_5.showModal()">Donate Now</button>
+                        <dialog id="my_modal_1" class="modal modal-bottom sm:modal-middle">
+                            <div class="modal-box text-center flex-col gap-5 inline">
+                                <h1 class="text-3xl font-bold py-2">Congrats!</h1>
+                                <div class="flex justify-center items-center py-2">
+                                    <img src="./assets/coin.png" alt="">
+                                </div>
+                                <p>You Have Donated For Humankind</p>
+                                <h3 class="text-xl font-bold py-2">Succesfully</h3>
+                                <div class="modal-action justify-center">
+                                    <form method="dialog">
+                                        <!-- if there is a button in form, it will close the modal -->
+                                        <button class="btn">Close Confirmation</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </dialog>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- donate for feni section  -->
+        <section class="card p-5  mx-auto max-w-[1020px] bg-[#e7e4e41a] border border-[#7b7b7b1a] mt-8">
+            <div class="flex gap-5">
+                <!-- card image  -->
+                <div class="w-1/2">
+                    <img src="./assets/feni.png" alt="">
+                </div>
+                <!-- card info section  -->
+                <div class="w-1/2 flex-col gap-3">
+
+                    <div class="flex bg-[#1111110D] items-center max-w-44 gap-1 rounded-md p-3 mb-3">
+                        <div>
+                            <img class="w-full" src="./assets/coin.png" alt="">
+                        </div>
+                        <div class="text-xl font-bold">89,414</div>
+                        <div class="text-xl font-bold">BDT</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <h2 class="card-title mb-2">Donate for Flood Relief in Feni,Bangladesh</h2>
+                        <p> The recent floods in Feni have devastated local communities, leading to severe disruption
+                            and loss. Your generous donation will help provide immediate aid, including food, clean
+                            water, and medical supplies, to those affected by this calamity. Together, we can offer
+                            crucial support and help rebuild lives in the aftermath of this disaster. Every contribution
+                            counts towards making a real difference. Please consider donating today to assist those in
+                            urgent need.</p>
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="text" placeholder="Write Donation Amount"
+                            class="input input-bordered w-full max-w-lg" />
+                    </div>
+                    <div class="card-actions justify-center">
+                        <button class="btn bg-[#B4F461] px-48 " onclick="my_modal_5.showModal()">Donate Now</button>
+                        <dialog id="my_modal_2" class="modal modal-bottom sm:modal-middle">
+                            <div class="modal-box text-center flex-col gap-5 inline">
+                                <h1 class="text-3xl font-bold py-2">Congrats!</h1>
+                                <div class="flex justify-center items-center py-2">
+                                    <img src="./assets/coin.png" alt="">
+                                </div>
+                                <p>You Have Donated For Humankind</p>
+                                <h3 class="text-xl font-bold py-2">Succesfully</h3>
+                                <div class="modal-action justify-center">
+                                    <form method="dialog">
+                                        <!-- if there is a button in form, it will close the modal -->
+                                        <button class="btn">Close Confirmation</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </dialog>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- aid injury for qouta movement  -->
+        <section class="rounded-xl p-5 mx-auto max-w-[1020px] bg-[#e7e4e41a] border border-[#7b7b7b1a] mt-8">
+            <div class="flex gap-5">
+                <!-- card image  -->
+                <div class="w-1/2">
+                    <img class="w-full" src="./assets/quota-protest.png" alt="">
+                </div>
+                <!-- card info section  -->
+                <div class="w-1/2 flex-col gap-3 ">
+
+                    <div class="flex bg-[#1111110D] items-center max-w-44 gap-1 rounded-md p-3 mb-3">
+                        <div>
+                            <img class="w-full" src="./assets/coin.png" alt="">
+                        </div>
+                        <div class="text-xl font-bold">89,414</div>
+                        <div class="text-xl font-bold">BDT</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <h2 class="card-title mb-2">Donate for Flood Relief in Feni,Bangladesh</h2>
+                        <p> The recent Quota movement has resulted in numerous injuries and significant hardship for
+                            many individuals. Your support is crucial in providing medical assistance, rehabilitation,
+                            and necessary supplies to those affected. By contributing, you help ensure that injured
+                            individuals receive the care and support they need during this challenging time. Every
+                            donation plays a vital role in alleviating their suffering and aiding in their recovery.
+                        </p>
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="text" placeholder="Write Donation Amount"
+                            class="input input-bordered w-full max-w-lg" />
+                    </div>
+                    <div class="card-actions justify-center">
+                        <button class="btn bg-[#B4F461] px-48 " onclick="my_modal_5.showModal()">Donate Now</button>
+                        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                            <div class="modal-box text-center flex-col gap-5 inline">
+                                <h1 class="text-3xl font-bold py-2">Congrats!</h1>
+                                <div class="flex justify-center items-center py-2">
+                                    <img src="./assets/coin.png" alt="">
+                                </div>
+                                <p>You Have Donated For Humankind</p>
+                                <h3 class="text-xl font-bold py-2">Succesfully</h3>
+                                <div class="modal-action justify-center">
+                                    <form method="dialog">
+                                        <!-- if there is a button in form, it will close the modal -->
+                                        <button class="btn">Close Confirmation</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </dialog>
+                    </div>
+
                 </div>
             </div>
         </section>
     </main>
     <!-- footer section  -->
-    <footer>
+    <footer class="bg-slate-300 mt-8">
 
     </footer>
+    <script src="./js/home.js"></script>
 </body>
 
 </html>
