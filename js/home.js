@@ -28,6 +28,12 @@ document.getElementById("noakhali-donate-btn").addEventListener("click", functio
         document.getElementById("noakhali-donate-amount-balance").innerText=newbalance;
         document.getElementById("account-balance").innerText=(accountBalance-donationAmount);
         my_modal_2.showModal();
+        //history added
+        const p=document.createElement("p");
+        p.innerText=` ${donationAmount} BDT donated to the fund Nahkhaki`;
+        console.log(p);
+        document.getElementById("History-container").appendChild(p);
+        
       }
     } else if (donationAmount <= 0) {
       alert("Please enter a positive number as input.");
